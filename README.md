@@ -1,2 +1,2 @@
 # rust-leetcode
-AB trying to learn Rust via leet codes. 
+AB trying to learn Rust via leet code. 
