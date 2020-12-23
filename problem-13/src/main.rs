@@ -1,36 +1,27 @@
 struct Solution {}
 impl Solution {
     pub fn roman_to_int(s: String) -> i32 {
-        let mut res = 0i32;
-        let mut prior: char = '0';
-        for c in s.chars() {
+        let mut res = 0;
+        let mut prior = '0';
+        for c in s.chars().rev() {
             match c {
-                'I' => res = res + 1,
-                'V' => match prior {
-                    'I' => res = res + 3,
-                    _ => res = res + 5,
-                },
+                'I' => match prior{
+                    'V' | 'X' => res -= 1,
+                    _ => res += 1,
+                }
+                'V' => res += 5,
                 'X' => match prior {
-                    'I' => res = res + 8,
-                    _ => res = res + 10,
+                    'L' | 'C' => res -= 10,
+                    _ => res += 10,
                 },
-                'L' => match prior {
-                    'X' => res = res + 30,
-                    _ => res = res + 50,
-                },
+                'L' => res += 50,
                 'C' => match prior {
-                    'X' => res = res + 80,
-                    _ => res = res + 100,
+                    'D' | 'M' => res -= 100,
+                    _ => res += 100,
                 },
-                'D' => match prior {
-                    'C' => res = res + 300,
-                    _ => res = res + 500,
-                },
-                'M' => match prior {
-                    'C' => res = res + 800,
-                    _ => res = res + 1000,
-                },
-                _ => res = res + 0,
+                'D' => res += 500,
+                'M' => res += 1000,
+                _ => res += 0,
             }
             prior = c;
         }
