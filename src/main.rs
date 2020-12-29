@@ -68,9 +68,17 @@ fn test_problem_13() {
     println!("{}", Solution::roman_to_int(x));
 }
 
+fn test_problem_14() {
+    let test_1 = vec![String::from("flower"), String::from("flow"), String::from("flight")];
+    let test_2 = vec![String::from("dog"), String::from("racecar"),String::from("car")];
+    println!("{}", Solution::longest_common_prefix(test_1));
+    println!("{}", Solution::longest_common_prefix(test_2));
+}
+
 fn main() {
-    test_problem_1();
-    test_problem_7();
-    test_problem_9();
-    test_problem_13();
+    // test_problem_1();
+    // test_problem_7();
+    // test_problem_9();
+    // test_problem_13();
+    test_problem_14();
 }
