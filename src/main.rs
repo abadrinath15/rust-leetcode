@@ -75,10 +75,24 @@ fn test_problem_14() {
     println!("{}", Solution::longest_common_prefix(test_2));
 }
 
+fn test_problem_20() {
+    let ex_1 = "()".to_string();
+    assert_eq!(Solution::is_valid(ex_1), true);
+    let ex_2 = "()[]{}".to_string();
+    assert_eq!(Solution::is_valid(ex_2), true);
+    let ex_3 = "(]".to_string();
+    assert_eq!(Solution::is_valid(ex_3), false);
+    let ex_4 = "([)]".to_string();
+    assert_eq!(Solution::is_valid(ex_4), false);
+    let ex_5 = "{[]}".to_string();
+    assert_eq!(Solution::is_valid(ex_5), true);
+
+}
+
 fn main() {
     // test_problem_1();
     // test_problem_7();
     // test_problem_9();
     // test_problem_13();
-    test_problem_14();
+    test_problem_20();
 }
