@@ -26,13 +26,8 @@ impl Solution {
                     }
                 },
                 _ => return false,
-            }
-        }
-        if open_stack.len() == 0 {
-            return true
-        }
-        else {
-            return false
-        }
+            };
+        };
+        if open_stack.len() == 0 {true} else {false}
     }
 }
