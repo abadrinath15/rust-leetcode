@@ -89,6 +89,10 @@ fn test_problem_20() {
 
 }
 
+fn test_problem_21() {
+    let l1 = solution_files::problem_21::ListNode::new(1);
+}
+
 fn main() {
     // test_problem_1();
     // test_problem_7();
