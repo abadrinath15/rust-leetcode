@@ -14,4 +14,4 @@ Cargo.lock
 
 /target
 .DS_Store
-/easy_solutions/target
+/easy_problems/target
